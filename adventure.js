@@ -24,14 +24,36 @@ let inexpense = leastExpensive(bjornsTrails)
 let expenseRiver = mostExpensiveRiver(bjornsRivers)
 let inexpenseRiver = leastExpensiveRiver(bjornsRivers)
 
-//trailTotal, shortTrail, longest, expense, inexpense
 
 
-//, returnExpense, returnInexpense
 getTrailLogs()
 showRivers()
 module.exports = {
-    trailTotal, riverTotal, longest, expense, inexpense, shortRiver, 
-    bjornsRivers, shortTrail,  
-    longestRiver, expenseRiver, inexpenseRiver, bjornsTrails 
+    trailTotal,
+    riverTotal,
+    longest,
+    expense,
+    inexpense,
+    shortRiver,
+    bjornsRivers,
+    shortTrail,
+    longestRiver, 
+    expenseRiver, 
+    inexpenseRiver,
+    bjornsTrails
 }
+
+/* let riversNTrails = {
+    trailTotal: trailTotal,
+    riverTotal: riverTotal, 
+    longest: longest, 
+    expense: expense, 
+    inexpense: inexpense, 
+    shortRiver: shortRiver, 
+    bjornsRivers: bjornsRivers,
+    shortTrail: shortTrail,
+    longestRiver: longestRiver, 
+    expenseRiver: expenseRiver, 
+    inexpenseRiver: inexpenseRiver,
+    bjornsTrails: bjornsTrails
+} */

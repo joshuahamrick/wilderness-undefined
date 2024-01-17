@@ -1,7 +1,10 @@
-const { trailTotal, shortTrail, longest, expense, inexpense, bjornsTrails } = require("./adventure.js");
+const {getTrails} = require("./data.js")
+const {trailTotal, shortTrail, longest, expense, inexpense} = require("./adventure.js");
+const bjornsTrails = getTrails()
+
 const getTrailLogs = () => {
     logIntrops()
-    consoleLoops()
+    consoleLoops(bjornsTrails)
 
 }
 const logIntrops = () => {
@@ -11,7 +14,7 @@ const logIntrops = () => {
             \nThe most expensive trails are`)
 }
 
-const consoleLoops = () => {
+const consoleLoops = (bjornsArr) => {
     for (const pricey of expense) {
         console.log(`\t\t${pricey}`)
     } 
@@ -20,7 +23,7 @@ const consoleLoops = () => {
         console.log(`\t\t${pricey}`)
     }
     console.log('TRAIL DETAILS: \n---------------------------------')
-    for (const trail of bjornsTrails) {
+    for (const trail of bjornsArr) {
         console.log(`${trail.trailName} starts at [${trail.latitude}, ${trail.longitude}] and is ${trail.length} kilometers long.
     The highlighted plant for the trip is ${trail.plantHighlight}.`)
     }
