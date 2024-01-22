@@ -1,20 +1,18 @@
-const {riverTotal, shortRiver, longestRiver, 
-    expenseRiver, inexpenseRiver, bjornsRivers} = require("./adventure.js")
-const showRivers = () => {
-    console.log(riverTotal)
-    console.log(shortRiver)
-    console.log(longestRiver)
+const showRivers = (riverTotals, shortRivers, longestRivers, expenseRivers, inexpenseRivers, bjornsRiverss) => {
+    console.log(riverTotals)
+    console.log(shortRivers)
+    console.log(longestRivers)
     console.log(`The most expensive river tours are`)
-for (const pricey of expenseRiver) {
-    console.log(`\t\t${pricey}`)
+for (const pricey of expenseRivers) {
+    console.log(`\t\t${pricey.river}`)
 }
 console.log(`The least expensive river tours are`)
-for (const pricey of inexpenseRiver) {
-    console.log(`\t\t${pricey}`)
+for (const pricey of inexpenseRivers) {
+    console.log(`\t\t${pricey.river}`)
 }
 console.log(`RIVER DETAILS:
     \n---------------------------------`)
-for(const river of bjornsRivers) {
+for(const river of bjornsRiverss) {
     console.log(`${river.river} starts at [${river.latitude}, ${river.longitude}] and is ${river.length} kilometers long.
     The unique fish for the trip is ${river.uniqueFish}.`)
 }

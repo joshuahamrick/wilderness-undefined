@@ -1,59 +1,21 @@
-const { getTrails, getRivers, getWildlife } = require("./data.js")
+const { database } = require("./database.js")
 const {totalTrailMiles, shortestTrail, longTrail, totalRiverMiles, shortestRiver, longRiver,
     mostExpensive, leastExpensive, mostExpensiveRiver, leastExpensiveRiver} = require("./function.js")
 const {art} = require("./displayHead.js")
 const {getTrailLogs} = require("./trails.js")
 const {showRivers} = require("./rivers.js")
 
-    const bjornsTrails = getTrails()
-    const bjornsRivers = getRivers()
-    const bjornsWildlife = getWildlife()
-    console.log(art)
-
-
-
-
-const trailTotal = totalTrailMiles(bjornsTrails)
-const shortTrail = shortestTrail(bjornsTrails)
-const longest = longTrail(bjornsTrails)
-const riverTotal = totalRiverMiles(bjornsRivers)
-const shortRiver = shortestRiver(bjornsRivers)
-const longestRiver = longRiver(bjornsRivers)
-let expense = mostExpensive(bjornsTrails)
-let inexpense = leastExpensive(bjornsTrails)
-let expenseRiver = mostExpensiveRiver(bjornsRivers)
-let inexpenseRiver = leastExpensiveRiver(bjornsRivers)
-
-
-
-getTrailLogs()
-showRivers()
-module.exports = {
-    trailTotal,
-    riverTotal,
-    longest,
-    expense,
-    inexpense,
-    shortRiver,
-    bjornsRivers,
-    shortTrail,
-    longestRiver, 
-    expenseRiver, 
-    inexpenseRiver,
-    bjornsTrails
-}
-
-/* let riversNTrails = {
-    trailTotal: trailTotal,
-    riverTotal: riverTotal, 
-    longest: longest, 
-    expense: expense, 
-    inexpense: inexpense, 
-    shortRiver: shortRiver, 
-    bjornsRivers: bjornsRivers,
-    shortTrail: shortTrail,
-    longestRiver: longestRiver, 
-    expenseRiver: expenseRiver, 
-    inexpenseRiver: inexpenseRiver,
-    bjornsTrails: bjornsTrails
-} */
+console.log(art)
+const trailTotal = totalTrailMiles(database.trails)
+const shortTrail = shortestTrail(database.trails)
+const longest = longTrail(database.trails)
+const riverTotal = totalRiverMiles(database.rivers)
+const shortRiver = shortestRiver(database.rivers)
+const longestRiver = longRiver(database.rivers)
+let expense = mostExpensive(database.trails)
+let inexpense = leastExpensive(database.trails)
+let expenseRiver = mostExpensiveRiver(database.rivers)
+let inexpenseRiver = leastExpensiveRiver(database.rivers)
+console.log(shortTrail)
+getTrailLogs(trailTotal, shortTrail, longest, expense, inexpense, database.trails)
+showRivers(riverTotal, shortRiver, longestRiver, expenseRiver, inexpenseRiver, database.rivers)

@@ -14,13 +14,15 @@ const totalTrailMiles = (arr) => {
 const shortestTrail = (trailArray) => {
     let shortest = longTrail(trailArray)
     for (const trail of trailArray) {
-        if(trail.length < shortest) {
-            shortest = trail.length
+            if (trail.length < shortest) {
+                shortest = trail.length
+            }
+            
         }
+        return shortest
+
     }
 
-    return shortest
-}
 /* const shortestTrail = (trailArray) => {
     shortestLength = 0
     for (const trail of trailArray){
@@ -73,48 +75,52 @@ const longRiver = (riversParam) => {
 
     return longest
 }
-
+//*********************
 const mostExpensive = (array) => {
-    let expensive = []
-    for (const tour of array) {
-        if (tour.price.length >= 4)
-        expensive.push(tour.trailName)
-    }
-    return expensive
+    const expensiveTrails = array.filter(trail => trail.price.length >= 4)
+    //const mappedExpense = expensiveTrails.map(trail => trail.trailName)
+    return expensiveTrails
 }
-
+//************
 
 const leastExpensive = (array) => {
-    let inexpensive = []
-    for (const tour of array) {
-        if (tour.price.length <= 1) {
-            inexpensive.push(tour.trailName)
-        }
+    const inexpensiveTrails = array.filter(trail => trail.price.length <= 1)
+    return inexpensiveTrails
+    // let inexpensive = []
+    // for (const tour of array) {
+    //     if (tour.price.length <= 1) {
+    //         inexpensive.push(tour.trailName)
+    //     }
        
-    }
-    return inexpensive
+    // }
+    // return inexpensive
+
 }
 
 //******************************************
 const mostExpensiveRiver = (array) => {
-    let expensive = []
-    for (const tour of array) {
-        if (tour.price.length >= 4)
-        expensive.push(tour.river)
-    }
-    return expensive
+    const mostExpensiveRiver = array.filter(trail => trail.price.length >= 4)
+    return mostExpensiveRiver
+    // let expensive = []
+    // for (const tour of array) {
+    //     if (tour.price.length >= 4)
+    //     expensive.push(tour.river)
+    // }
+    // return expensive
 }
 
-
+//******************
 const leastExpensiveRiver = (array) => {
-    let inexpensive = []
-    for (const tour of array) {
-        if (tour.price.length <= 1) {
-            inexpensive.push(tour.river)
-        }
+    const leastExpensiveRiver = array.filter(trail => trail.price.length <= 1)  
+    return leastExpensiveRiver
+    // let inexpensive = []
+    // for (const tour of array) {
+    //     if (tour.price.length <= 1) {
+    //         inexpensive.push(tour.river)
+    //     }
        
-    }
-    return inexpensive
+    // }
+    // return inexpensive
 }
  module.exports = {
     totalTrailMiles, shortestTrail, longTrail, totalRiverMiles, shortestRiver, longRiver,

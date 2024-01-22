@@ -1,26 +1,22 @@
-const {getTrails} = require("./data.js")
-const {trailTotal, shortTrail, longest, expense, inexpense} = require("./adventure.js");
-const bjornsTrails = getTrails()
-
-const getTrailLogs = () => {
-    logIntrops()
-    consoleLoops(bjornsTrails)
+const getTrailLogs = (trailTotals, shortTrails, longests, expenses, inexpenses, bjornsTrailss) => {
+    logIntrops(trailTotals, shortTrails, longests)
+    consoleLoops(bjornsTrailss, expenses, inexpenses)
 
 }
-const logIntrops = () => {
-    console.log(`We service ${trailTotal} kilos of wilderness trails across the US.  
-            \nThe shortest trail is ${shortTrail} kilometers.
-            \nThe longest trail is ${longest} kilometers.
+const logIntrops = (trailTotals, shortTrails, longests) => {
+    console.log(`We service ${trailTotals} kilos of wilderness trails across the US.  
+            \nThe shortest trail is ${shortTrails} kilometers.
+            \nThe longest trail is ${longests} kilometers.
             \nThe most expensive trails are`)
 }
 
-const consoleLoops = (bjornsArr) => {
-    for (const pricey of expense) {
-        console.log(`\t\t${pricey}`)
+const consoleLoops = (bjornsArr, expenses, inexpenses) => {
+    for (const pricey of expenses) {
+        console.log(`\t\t${pricey.trailName}`)
     } 
     console.log(`The least expensive trails are`)
-    for (const pricey of inexpense) {
-        console.log(`\t\t${pricey}`)
+    for (const pricey of inexpenses) {
+        console.log(`\t\t${pricey.trailName}`)
     }
     console.log('TRAIL DETAILS: \n---------------------------------')
     for (const trail of bjornsArr) {
